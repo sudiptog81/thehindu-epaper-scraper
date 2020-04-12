@@ -10,6 +10,10 @@ The PDF is then downloaded to a predefined location which is `/media/volume-extr
 
 This PDF is then uploaded to a MEGA folder and then deleted from the local machine. The PDF can then be accessed from all devices supported by the MEGA clients. One may override the behaviour of the script in `upload.py` to change the uploading and cleanup logic.
 
+## Sample Downloads
+
+[View The Hindu ePaper folder on MEGA](https://mega.nz/folder/GF9Xnbxa#ynPVRk1nT63le5rpA9IxCw)
+
 ## Quick Start
 
   - Open a terminal and navigate to the directory where you have cloned the repository.
