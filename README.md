@@ -34,4 +34,4 @@ Sudipto Ghosh ([sudipto.ghosh.pro](https://sudipto.ghosh.pro))
 
 Source code is distributed under the MIT License.
 
-All rights to the textual and non-textual media sourced from 'The Hindu e-Paper' using this script are reserved by The Hindy Group Publishing Pvt Ltd.
+All rights to the textual and non-textual media sourced from 'The Hindu e-Paper' using this script are reserved by The Hindu Group Publishing Pvt Ltd.
