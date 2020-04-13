@@ -10,14 +10,14 @@ display.start()
 
 download_dir = '/media/volume-extra/theHindu/' + \
     str(datetime.today().strftime('%d-%m-%Y'))
-options = webdriver.ChromeOptions()
-
 profile = {
     'download.prompt_for_download': False,
     'download.default_directory': download_dir,
     'download.directory_upgrade': True,
     'plugins.always_open_pdf_externally': True,
 }
+
+options = webdriver.ChromeOptions()
 options.add_experimental_option('prefs', profile)
 
 browser = webdriver.Chrome(options=options, service_log_path='/dev/null')
@@ -35,7 +35,7 @@ try:
     sleep(10)
     browser.execute_script('DownloadEditionPdf();')
     sleep(15)
-    print('SUCCESS: Saved The Hindu ePaper at ' +
+    print('SUCCESS: Saved The Hindu ePaper at ' + \
           datetime.today().strftime('%d-%m-%Y %H:%M:%S'))
 except Exception as e:
     print('FAILED: Could Not Save PDF')
