@@ -6,7 +6,7 @@ This script uses the Selenium WebDriver to open a Chromium window in a Virtual D
 
 Once the web application of 'The Hindu e-Paper' loads successfully, it invokes the JavaScript function that is responsible for downloading all the pages of the newspaper as a PDF.
 
-The PDF is then downloaded to a predefined location which is `/media/volume-extra/theHindu/<date-in-dd-mm-yyyy>` by default and can be overridden by replacing this path in all of the files.
+The PDF is then downloaded to a predefined location which is `/media/volume-extra/theHindu/<date-in-dd-mm-yyyy>` by default and can be overridden by replacing this path in all of the files. A push notification is also sent to the devices subscribed to receive them.
 
 This PDF is then uploaded to a MEGA folder and then deleted from the local machine. The PDF can then be accessed from all devices supported by the MEGA clients. One may override the behaviour of the script in `upload.py` to change the uploading and cleanup logic.
 
@@ -14,12 +14,15 @@ This PDF is then uploaded to a MEGA folder and then deleted from the local machi
 
 [View The Hindu ePaper folder on MEGA](https://mega.nz/folder/GF9Xnbxa#ynPVRk1nT63le5rpA9IxCw)
 
+[Subscribe to Sample Push Notifications](https://notify.run/c/ovzNEOD6IXThQpjN)
+
 ## Quick Start
 
   - Open a terminal and navigate to the directory where you have cloned the repository.
   - Change `YOUR-EMAIL` and `YOUR-PASSWORD` in `main.py`.
   - Change `/media/volume-extra/theHindu/` to the absolute location where you want the e-Papers to be downloaded in `main.py` as well as `upload.py`. This folder must exist before running the script.
   - Install all dependencies from PyPI using the command `pip install -r requirements.txt`.
+  - Register your devices with `notify-run register` to receive push notifications.
   - Run the script by executing `./scrape.sh`.
 
 ## Scheduling the Job
@@ -35,3 +38,4 @@ Sudipto Ghosh ([sudipto.ghosh.pro](https://sudipto.ghosh.pro))
 Source code is distributed under the MIT License.
 
 All rights to the textual and non-textual media sourced from 'The Hindu e-Paper' using this script are reserved by The Hindu Group Publishing Pvt Ltd.
+

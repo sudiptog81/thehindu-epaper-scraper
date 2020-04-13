@@ -2,8 +2,11 @@ import os
 from time import sleep
 from datetime import datetime
 from pyvirtualdisplay import Display
+from notify_run import Notify
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+
+notify = Notify()
 
 display = Display(visible=0, size=(1336, 768))
 display.start()
@@ -36,10 +39,15 @@ try:
     browser.execute_script('DownloadEditionPdf();')
     sleep(15)
     print('SUCCESS: Saved The Hindu ePaper at ' + \
-          datetime.today().strftime('%d-%m-%Y %H:%M:%S'))
+          str(datetime.today().strftime('%d-%m-%Y %H:%M:%S')))
+    notify.send('SAVED: The Hindu ' + \
+          str(datetime.today().strftime('%d-%m-%Y')))
 except Exception as e:
     print('FAILED: Could Not Save PDF')
     print(str(e))
+    notify.send('FAILURE: The Hindu ' + \
+          str(datetime.today().strftime('%d-%m-%Y')))
 finally:
     browser.quit()
     display.stop()
+
