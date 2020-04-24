@@ -13,17 +13,17 @@ display.start()
 
 download_dir = '/media/volume-extra/theHindu/' + \
     str(datetime.today().strftime('%d-%m-%Y'))
-profile = {
-    'download.prompt_for_download': False,
-    'download.default_directory': download_dir,
-    'download.directory_upgrade': True,
-    'plugins.always_open_pdf_externally': True,
-}
 
-options = webdriver.ChromeOptions()
-options.add_experimental_option('prefs', profile)
+profile = webdriver.FirefoxProfile()
+profile.set_preference('browser.download.folderList', 2)
+profile.set_preference('browser.download.manager.showWhenStarting', False)
+profile.set_preference('browser.download.dir', download_dir)
+profile.set_preference('browser.download.manager.focusWhenStarting', False)
+profile.set_preference('browser.helperApps.neverAsk.saveToDisk', 'application/pdf')
+profile.set_preference('pdfjs.disabled', True)
+profile.set_preference('pdfjs.enabledCache.state', False); 
 
-browser = webdriver.Chrome(options=options, service_log_path='/dev/null')
+browser = webdriver.Firefox(profile, log_path=os.path.devnull)
 browser.get('https://epaper.thehindu.com/Login/LandingPage')
 
 try:

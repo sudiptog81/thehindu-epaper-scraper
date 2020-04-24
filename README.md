@@ -2,7 +2,7 @@
 
 Script for scraping the e-paper of the prestigious English daily 'The Hindu'. The edition and city of the newspaper can be selected by logging in to the portal manually and selecting the edition. The script downloads the edition selected in one's profile. This script is written for UNIX.
 
-This script uses the Selenium WebDriver to open a Chromium window in a Virtual Display, by leveraging Xvfb, and navigates to the login page of The Hindu e-Paper portal. It closes any popup displayed on the login page and proceeds to enter the credentials and submitting the login form. Credentials have to be provided in place of `YOUR-EMAIL` and `YOUR-PASSWORD` in `main.py`.
+This script uses the Selenium WebDriver to open a Firefox window in a Virtual Display, by leveraging Xvfb, and navigates to the login page of The Hindu e-Paper portal. It closes any popup displayed on the login page and proceeds to enter the credentials and submitting the login form. Credentials have to be provided in place of `YOUR-EMAIL` and `YOUR-PASSWORD` in `main.py`.
 
 Once the web application of 'The Hindu e-Paper' loads successfully, it invokes the JavaScript function that is responsible for downloading all the pages of the newspaper as a PDF.
 
@@ -18,6 +18,7 @@ This PDF is then uploaded to a MEGA folder and then deleted from the local machi
 
 ## Quick Start
 
+  - Download and install the [`geckodriver`](https://github.com/mozilla/geckodriver/releases).
   - Open a terminal and navigate to the directory where you have cloned the repository.
   - Change `YOUR-EMAIL` and `YOUR-PASSWORD` in `main.py`.
   - Change `/media/volume-extra/theHindu/` to the absolute location where you want the e-Papers to be downloaded in `main.py` as well as `upload.py`. This folder must exist before running the script.
