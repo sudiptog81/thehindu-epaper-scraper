@@ -6,7 +6,7 @@ date = str(datetime.today().strftime('%d-%m-%Y'))
 dir_name = '/media/volume-extra/theHindu/' + date
 os.chdir(dir_name)
 sleep(10)
-files = glob.glob("*.pdf")
+files = glob.glob('*.pdf')
 files.sort(key=os.path.getmtime)
 filename = str(files[0])
 command = 'mega-put \'' + dir_name + '/' + filename + '\'' + \
