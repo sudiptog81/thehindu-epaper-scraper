@@ -23,7 +23,7 @@ profile.set_preference('browser.helperApps.neverAsk.saveToDisk', 'application/pd
 profile.set_preference('pdfjs.disabled', True)
 profile.set_preference('pdfjs.enabledCache.state', False); 
 
-browser = webdriver.Firefox(profile, log_path=os.path.devnull)
+browser = webdriver.Firefox(profile, service_log_path=os.path.devnull)
 browser.get('https://epaper.thehindu.com/Login/LandingPage')
 
 try:
